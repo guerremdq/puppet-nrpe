@@ -19,8 +19,8 @@ define nrpe::plugin (
   if $source {
     file { "Nrpe_plugin_${name}":
       path    => "${nrpe::pluginsdir}/${name}",
-      owner   => root,
-      group   => root,
+      owner   => nagios,
+      group   => nagios,
       mode    => '0755',
       ensure  => $ensure,
       require => Package['nrpe'],
